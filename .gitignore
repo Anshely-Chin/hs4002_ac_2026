@@ -1,0 +1,8 @@
+.DS_store
+.ipynb_checkpoints/
+__pycache__/
+*.pyc/
+.Rproj.user/
+.Rhistory/
+.venv/
+data/raw/*.sav/
