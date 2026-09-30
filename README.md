@@ -10,6 +10,9 @@ The dataset is the public-use dataset, which contains only 1/3 of the actual sam
 
 We created a maximum of 6 possible role identities that the adolescents can have (student, child, religious, vocational, best friend and romantic partner).
 
+## LLM-use declaration for writing code
+The plans on how to create the variables were ours, but we did use chatbots to get the code on how to work with the variables. For example, we prompted the chatbots with questions like "what is the python code to sum variables / convert string data to numerical data / recode a variable to a binary variable / python code to find AMEs for logistic regression / visualising interaction effects".
+
 ## Variables
 ### Dependent variable: suicide ideation
 Variable name -> "suicide"
@@ -40,7 +43,7 @@ This variable was created using the adolescents' responses to two original varia
 How much do you think your father cares about you? / 
 How much do you think your mother cares about you?
 
-The original variables were coded on a scale of “1 = not at all” to “5 = very much”. As some respondents were missing one parent, we consider the child identity to be possibly activated as long as the adolescent has one parent. I took the maximum number out of the two variables, where the greater value indicated higher identity verification. It was then recoded into a binary variable where any scores >= 4 were recoded as "Identity verified = 1" and the rest were recoded as "Identity not verified = 0".
+The original variables were coded on a scale of “1 = not at all” to “5 = very much”. As some respondents were missing one parent, we consider the child identity to be possibly activated as long as the adolescent has one parent. I took the maximum number out of the two variables, where the greater value indicated higher identity verification. It was then recoded into a binary variable where any scores >= 4 were recoded as "Identity available = 1" and the rest were recoded as "Identity not available = 0".
 
 #### Religious identity
 Variable name -> idreligion 
@@ -54,12 +57,12 @@ These were recoded as a binary variable:
 (3) fairly important, (4) very important = 1
 (1) very unimportant, (2) fairly unimportant = 0
 
-We renamed the columns "Identity verified = 1" and "Identity not verified = 0" to match the other variables.
+We renamed the columns "Identity available = 1" and "Identity not available = 0" to match the other variables.
 
 #### Vocational identity
 Variable name -> idworker 
 
-This variable was created by recoding the adolescents' responses to: "In the last 4 weeks, did you work for money outside of home?". These were coded as a binary variable (0 = no, 1 = yes). We also renamed the columns "Identity verified = 1" and "Identity not verified = 0" to match the other variables.
+This variable was created by recoding the adolescents' responses to: "In the last 4 weeks, did you work for money outside of home?". These were coded as a binary variable (0 = no, 1 = yes). We also renamed the columns "Identity available = 1" and "Identity not available = 0" to match the other variables.
 
 #### Best friend identity
 Variable name -> havebestfriend
@@ -68,20 +71,20 @@ This variable was created using adolescents' nominations of alters (found in Wav
 
 We draw from the original dummy variables "Ego nominated a male best friend" and "Ego nominated a female best friend". Both variables were coded as "1 = Ego nominated a male/female best friend, 0 = Ego did not nominate a male/female best friend". 
 
-We took the sum of the variables and recoded it into an ordinal variable: (2) has a male and female best friend, (1) has either a male or female best friend, (0) has no best friends
+We took the sum of the variables and recoded it into an ordinal variable: (2) has a male and female best friend, (1) has either a male or female best friend, (0) has no best friends. This implies that an adolescent who has at least one best friend will have the best friend identity available, while one with no best friends will not have the best friend identity available.
 
 #### Romantic partner identity
 Variable name -> romanticpartner
 
-This variable was created by recoding the adolescents' responses to: "In the last 18 months, have you had a special romantic relationship with anyone?". These were coded as a binary variable (0 = no, 1 = yes). Again, we simply renamed the columns "Identity verified = 1" and "Identity not verified = 0" to match the other variables.
+This variable was created by recoding the adolescents' responses to: "In the last 18 months, have you had a special romantic relationship with anyone?". These were coded as a binary variable (0 = no, 1 = yes). Again, we simply renamed the columns "Identity available = 1" and "Identity not available = 0" to match the other variables.
 
 ### Moderator
 Variable name -> heterogeneity
 
-This variable represents the total number of role identities an adolescent can possibly have. It was created by taking the sum of all the other independent variables [idstudent_binary, idchild_binary, idreligion, idworker, havebestfriend, romanticpartner]. For example, an adolescent whose heterogeneity value is 6 has six possible avenues to activate and verify a different role identity. In other words, they have 5 other alternative identities other than the student identity.
+This variable represents the total number of role identities an adolescent can possibly have. It was created by taking the sum of all the other independent variables [idstudent_binary, idchild_binary, idreligion, idworker, havebestfriend, romanticpartner]. For example, an adolescent whose heterogeneity value is 6 has six possible avenues to activate and verify a different role identity. In other words, they have 5 other alternative identities available if the student identity is not verified.
 
 ## Data
-The total sample size was 6502. We made a subset [suicide, idstudent_binary, idchild_binary, idreligion, idworker, havebestfriend, romanticpartner] and dropped rows with any missing variables. The working sample size was 3847. Descriptive statistics are presented in Table 1.
+The total sample size was 6502. We made a subset [suicide, idstudent_binary, idchild_binary, idreligion, idworker, havebestfriend, romanticpartner] and dropped rows with any missing variables. The final working sample size in this proposal was 3847. Descriptive statistics are presented in Table 1.
 
 ## Logistic regression
 As the dependent variable [suicide] is a binary variable, we ran a logistic regression. Table 2 presents the results of the logistic regression, with the main effects of the independent variables in log-odds and average marginal effects.
@@ -95,3 +98,6 @@ Table 3's model: suicide ~ idstudent_binary + idchild_binary + idreligion + idwo
 Finally, since this project aims to examine whether the effect of identity non-verification is moderated by network heterogeneity, Table 4 presents the third logit model which includes the interaction effect between the student identity and network heterogeneity.
 
 Table 4's model: suicide ~ idstudent_binary + idchild_binary + idreligion + idworker + havebestfriend + romanticpartner + heterogeneity + idstudent_binary:heterogeneity
+
+## Data visualisations
+Marginal effects interaction plot
