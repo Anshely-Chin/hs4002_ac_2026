@@ -6,3 +6,6 @@ __pycache__/
 .Rhistory/
 .venv/
 data/raw/*.sav/
+addhealth_ds1_wave1.csv
+addhealth_ds3_wave1.csv
+addhealth4002 merged.csv
