@@ -74,3 +74,12 @@ We took the sum of the variables and recoded it into an ordinal variable: (2) ha
 Variable name -> romanticpartner
 
 This variable was created by recoding the adolescents' responses to: "In the last 18 months, have you had a special romantic relationship with anyone?". These were coded as a binary variable (0 = no, 1 = yes). Again, we simply renamed the columns "Identity verified = 1" and "Identity not verified = 0" to match the other variables.
+
+## Data
+The total sample size was 6502. We made a subset [suicide, idstudent_binary, idchild_binary, idreligion, idworker, havebestfriend, romanticpartner] and dropped rows with any missing variables. The working sample size was 3847. Descriptive statistics are presented in Table 1.
+
+## Logistic regression
+As the dependent variable [suicide] is a binary variable, we ran a logistic regression. Table 2 presents the results of the logistic regression, with the main effects of the independent variables in log-odds and average marginal effects.
+
+Table 2's model: suicide ~ idstudent_binary + idchild_binary + idreligion + idworker + havebestfriend + romanticpartner
+
