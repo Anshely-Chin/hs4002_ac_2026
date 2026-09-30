@@ -73,6 +73,8 @@ We draw from the original dummy variables "Ego nominated a male best friend" and
 
 We took the sum of the variables and recoded it into an ordinal variable: (2) has a male and female best friend, (1) has either a male or female best friend, (0) has no best friends. This implies that an adolescent who has at least one best friend will have the best friend identity available, while one with no best friends will not have the best friend identity available.
 
+The initial consideration for keeping the male and female best friend nominations separate was to possibly account for gendered differences, but we did not continue with it for this proposal.
+
 #### Romantic partner identity
 Variable name -> romanticpartner
 
@@ -81,7 +83,9 @@ This variable was created by recoding the adolescents' responses to: "In the las
 ### Moderator
 Variable name -> heterogeneity
 
-This variable represents the total number of role identities an adolescent can possibly have. It was created by taking the sum of all the other independent variables [idstudent_binary, idchild_binary, idreligion, idworker, havebestfriend, romanticpartner]. For example, an adolescent whose heterogeneity value is 6 has six possible avenues to activate and verify a different role identity. In other words, they have 5 other alternative identities available if the student identity is not verified.
+This variable represents the total number of role identities an adolescent can possibly have. But first, we recoded the [havebestfriend] variable into a binary variable [idfriend_binary], where having >= 1 best friend meant that the best friend identity was available. Like the other binary variables, it was recoded as "Identity available = 1" and "Identity not available = 0".
+
+The [heterogeneity] variable was then created by taking the sum of the five other role identities [idchild_binary, idreligion, idworker, idfriend_binary, romanticpartner]. For example, an adolescent whose heterogeneity value is 5 has five other possible avenues to activate and verify a different role identity. In other words, they have 5 other alternative identities available if the student identity is not verified. A current limitation is that there are no variables that also measure verification of the alternative identities.
 
 ## Data
 The total sample size was 6502. We made a subset [suicide, idstudent_binary, idchild_binary, idreligion, idworker, havebestfriend, romanticpartner] and dropped rows with any missing variables. The final working sample size in this proposal was 3847. Descriptive statistics are presented in Table 1.
@@ -100,4 +104,7 @@ Finally, since this project aims to examine whether the effect of identity non-v
 Table 4's model: suicide ~ idstudent_binary + idchild_binary + idreligion + idworker + havebestfriend + romanticpartner + heterogeneity + idstudent_binary:heterogeneity
 
 ## Data visualisations
-Marginal effects interaction plot
+### Marginal effects interaction plot
+To understand whether having alternative identities (or role heterogeneity) moderates suicide ideation for adolescents' whose student identities are verified or fail to be verified, we made an interaction plot using *predictions* function from the *marginaleffects* package, isolating the interaction effect [idstudent_binary:heterogeneity]. The graph plotted the suicide ideation risk for every adolescent based on whether or not their student identity was verified, holding all their other role identity availability constant. This is intended to test whether accumulating more alternative identities can reduce suicide ideation when the primary identity (in this case, the student identity) is verified.
+
+LLM-use declaration: we wanted to make a graph to show this effect but did not know what function to use. So we prompted a chatbot with questions like "python code for visualising an interaction effect with a dependent variable in a logit regression".
