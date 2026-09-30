@@ -75,6 +75,11 @@ Variable name -> romanticpartner
 
 This variable was created by recoding the adolescents' responses to: "In the last 18 months, have you had a special romantic relationship with anyone?". These were coded as a binary variable (0 = no, 1 = yes). Again, we simply renamed the columns "Identity verified = 1" and "Identity not verified = 0" to match the other variables.
 
+### Moderator
+Variable name -> heterogeneity
+
+This variable represents the total number of role identities an adolescent can possibly have. It was created by taking the sum of all the other independent variables [idstudent_binary, idchild_binary, idreligion, idworker, havebestfriend, romanticpartner]. For example, an adolescent whose heterogeneity value is 6 has six possible avenues to activate and verify a different role identity. In other words, they have 5 other alternative identities other than the student identity.
+
 ## Data
 The total sample size was 6502. We made a subset [suicide, idstudent_binary, idchild_binary, idreligion, idworker, havebestfriend, romanticpartner] and dropped rows with any missing variables. The working sample size was 3847. Descriptive statistics are presented in Table 1.
 
@@ -83,3 +88,10 @@ As the dependent variable [suicide] is a binary variable, we ran a logistic regr
 
 Table 2's model: suicide ~ idstudent_binary + idchild_binary + idreligion + idworker + havebestfriend + romanticpartner
 
+Table 3 presents the second logit model including the heterogeneity moderator. It reports the main effects of the variables in log-odds and average marginal effects.
+
+Table 3's model: suicide ~ idstudent_binary + idchild_binary + idreligion + idworker + havebestfriend + romanticpartner + heterogeneity
+
+Finally, since this project aims to examine whether the effect of identity non-verification is moderated by network heterogeneity, Table 4 presents the third logit model which includes the interaction effect between the student identity and network heterogeneity.
+
+Table 4's model: suicide ~ idstudent_binary + idchild_binary + idreligion + idworker + havebestfriend + romanticpartner + heterogeneity + idstudent_binary:heterogeneity
