@@ -19,6 +19,9 @@ E.g. All output for Table 2 was obtained from: logistic regression of lm6, avg_c
 #### "Output" folder
 Contains raw output from the notebook
 
+#### "Data" folder
+We use the Add Health Wave 1 DS1 and DS3 public use datasets, downloaded from https://www.icpsr.umich.edu/web/DSDR/studies/21600/datadocumentation?tenant=icpsr&archive=dsdr on 21 August 2026. It is not committed here due to data access agreements, which require users to register for access with ICPSR.
+
 ## Project Overview
 Broadly, we test whether identity non-verification is associated with mental health outcomes and whether this relationship is moderated by network diversity, such that low verification is more strongly associated with suicide ideation in more homogeneous networks.
 
