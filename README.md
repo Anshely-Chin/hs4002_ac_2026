@@ -8,7 +8,8 @@ Contains tables for descriptive statistics of the sample, coefficients and avera
 - Table 2: Model 1's coefficients and AMEs
 - Table 3: Model 2's coefficients and AMEs
 - Table 4: Model 3's coefficients and AMEs (including interaction effect)
-- Table 5: Model comparisons
+- Model comparisons of Model 1, 2 and 3 (Table 5)
+- Interaction plot
 
 #### "Code" folder
 Contains the Jupyter notebook used to run data for this project. Exploratory models have been commented out (with #). The codes have been arranged to run in order of the variables created.
