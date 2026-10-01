@@ -74,6 +74,7 @@ The original variable was coded on a scale of (1) very unimportant, (2) fairly u
 These were recoded as a binary variable:
 
 (3) fairly important, (4) very important = 1
+
 (1) very unimportant, (2) fairly unimportant = 0
 
 We renamed the columns "Identity available = 1" and "Identity not available = 0" to match the other variables.
