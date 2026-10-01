@@ -9,10 +9,12 @@ Contains tables for descriptive statistics of the sample, coefficients and avera
 - Table 3: Model 2's coefficients and AMEs (named lm7 in the code)
 - Table 4: Model 3's coefficients and AMEs (named lm8 in the code)
 - Model comparisons of Model 1, 2 and 3 (Table 5)
-- Interaction plot
+- Interaction plot (for idstudent_binary:heterogeneity)
 
 #### "Code" folder
 Contains the Jupyter notebook used to run data for this project. Exploratory models have been commented out (with #). The codes have been arranged to run in order of the variables created.
+
+E.g. All output for Table 2 was obtained from: logistic regression of lm6, avg_comparisions for lm6, avg_predictions for lm6's intercept
 
 #### "Output" folder
 Contains raw output from the notebook
