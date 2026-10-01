@@ -2,12 +2,12 @@
 
 ## Contents of this repository
 #### "Table" folder
-Contains tables for descriptive statistics of the sample, coefficients and average marginal effects for the logistic regression models
+Contains tables for descriptive statistics of the sample, coefficients and average marginal effects for the logistic regression models. Table 2, 3 and 4 manually combined the outputs from the logistic regression and avg_comparisons, and baseline effects for the intercept. 
 
 - Table 1: Descriptive statistics
-- Table 2: Model 1's coefficients and AMEs
-- Table 3: Model 2's coefficients and AMEs
-- Table 4: Model 3's coefficients and AMEs (including interaction effect)
+- Table 2: Model 1's coefficients and AMEs (named lm6 in the code)
+- Table 3: Model 2's coefficients and AMEs (named lm7 in the code)
+- Table 4: Model 3's coefficients and AMEs (named lm8 in the code)
 - Model comparisons of Model 1, 2 and 3 (Table 5)
 - Interaction plot
 
